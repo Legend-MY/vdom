@@ -127,7 +127,9 @@
 								</div>
 							</form>
 						</div>
-						<button type="button" class="actions-header__cart"></button>
+						<a href="#" class="actions-header__cart">
+							<span class="cart-count">1</span>
+						</a>
 					</div>
 				</div>
 			</div>
