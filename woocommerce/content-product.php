@@ -28,7 +28,11 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 <?php
 if( is_front_page() ){ ?>
+<<<<<<< HEAD
                             <li class="offer_slide">
+=======
+                            <div class="offer_slide">
+>>>>>>> db56b73bfc72b33b75eb3d26a677e9128b7627b2
                                 <div class="offer_slide_content">
                                     <div class="offer_slide_img">
                                     	<img src="<?php the_field('изображение_акционного_товара_на_главной_странице'); ?>" alt="img" />
@@ -65,7 +69,11 @@ if( is_front_page() ){ ?>
                                         </div>
                                     </div>
                                 </div>
+<<<<<<< HEAD
                             </li>
+=======
+                            </div>
+>>>>>>> db56b73bfc72b33b75eb3d26a677e9128b7627b2
 
 
 <?php
