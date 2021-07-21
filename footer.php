@@ -11,30 +11,69 @@
 
 	
 
+<footer class="footer">
+	<div class="footer__wrapper">
 
-	<footer id="footer" class="site-footer" role="contentinfo">
-		<div class="_container footer__container">
-			<div class="footer__logo">
-				<?php the_custom_logo( $blog_id ); ?>
-			</div>
-			<div class="footer__address_menu">
-				
-			</div>
-			<div class="footer__menu">
-				<?php wp_nav_menu('menu_class=bmenu&theme_location=bottom'); ?>
-			</div>
-			<div class="footer__social">
-				<a href="" class="social_link">facebook</a>
-				<a href="" class="social_link">instagram</a>
-			</div>
+		<div class="footer__container _container">
+			<div class="footer__row">
+				<div class="footer__info info-footer">
+					<div class="info-footer__row">
 
-		</div><!-- .footer__container -->
-	</footer><!-- #colophon -->
-	<div class="copyright__wrapper">
-		<div class="copyright__container _container">
-			Лучший магазин (с) 2017 Все права защищены. Интернет-магазин  строительных материалов
+						<a href="/" class="info-footer__logo">
+						<?php 
+							$logo_img = '';
+								if( $custom_logo_id = get_theme_mod('custom_logo') ){
+									$logo_img = wp_get_attachment_image( $custom_logo_id, 'full', false, array(
+										'class'    => 'custom-logo',
+										'itemprop' => 'logo',
+									) );
+								}
+							echo $logo_img; 
+						?>
+						</a>
+
+						<ul class="info-footer__list">
+							<li class="info-footer__location">
+								<a href="#">г. Чернигов, ул. Любечская, 155</a>
+							</li>
+							<li class="info-footer__phone">
+								<a href="tel:+380962525511">(096) 252-55-11</a>
+							</li>
+							<li class="info-footer__phone">
+								<a href="tel:+380636125489">(063) 612-54-89</a>
+							</li>
+							<li class="info-footer__mail">
+								<a href="mailto:vdom2017@gmail.com ">vdom2017@gmail.com </a>
+							</li>
+						</ul>
+
+						<?php wp_nav_menu('menu_class=bmenu info-footer__list info-footer__list_pages&theme_location=bottom'); ?>
+					</div>
+				</div>
+
+				<div class="footer__social social-footer">
+					<ul class="social-footer__list">
+						<li>
+							<a href="#">
+								<picture><source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/img/icons/facebook.svg" type="image/webp"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/icons/facebook.svg" alt=""></picture>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<picture><source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/img/icons/instagram.svg" type="image/webp"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/icons/instagram.svg" alt=""></picture>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
+
 	</div>
+
+	<div class="footer__copy">
+		<p>Лучший магазин (с) 2017 Все права защищены. Интернет-магазин строительных материалов</p>
+	</div>
+</footer>
 
 
 

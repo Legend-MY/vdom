@@ -4,6 +4,7 @@
 add_action( 'wp_enqueue_scripts', 'vdom_scripts' );
 function vdom_scripts(){
 	 wp_enqueue_script('vdom-scripts-first', get_stylesheet_directory_uri() . '/assets/js/app.js');
+	 wp_enqueue_script('slick-slider-script', get_stylesheet_directory_uri() . '/assets/js/slick.min.js', array('jquery'), null);
 }
 // --------
 
