@@ -594,6 +594,7 @@ body._lock {
 }
 
 .content-area .woocommerce-tabs {
+  font-family: "Open Sans", sans-serif;
   padding: 50px 0px 0px 0px;
 }
 
@@ -618,6 +619,7 @@ body._lock {
 }
 
 .content-area .woocommerce-product-details__short-description {
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 150%;
   color: #656263;
@@ -648,6 +650,7 @@ body._lock {
   -moz-appearance: textfield;
   appearance: textfield;
   width: 100%;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 48px;
   color: #0a6b38;
@@ -693,6 +696,7 @@ body._lock {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 272px;
   flex: 0 0 272px;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 48px;
   font-weight: 400;
