@@ -26,12 +26,25 @@ add_action('woocommerce_single_product_summary', 'woocommerce_template_single_ad
 // --------
 
 
+register_nav_menus(array(
+	'top'    => 'Верхнее меню',    //Название месторасположения меню в шаблоне
+	'bottom' => 'Нижнее меню'      //Название другого месторасположения меню в шаблоне
+));
 
 
 
+// https://www.pandoge.com/stati-i-sovety/kak-sozdat-novuyu-oblast-dlya-vidzheta-v-wordpress
+register_sidebar(array(
+	'name' => 'Область фильтров', // Отображаемое название области в панели управления
+	'id' => 'sidebar_new', // Уникальный ID области
+	'description' => __( 'Область для вывода фильтров'),
+	'before_widget' => '<div id="filter_box" class="filter__box">', // Начало обертки блока
+	'after_widget' => '</div>', // Конец обертки блока
+	'before_title' => '<h3 class="widget-title">', // Начало обертки заголовка
+	'after_title' => '</h3>' // Конец обертки заголовка
+));
 
-
-
+// <?php dynamic_sidebar("Область фильтров"); ? >   // этот кусок кода нужно будет добавить в темплейт 
 
 
 
