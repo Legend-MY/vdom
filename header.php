@@ -47,7 +47,7 @@
 						</div>
 						<nav class="menu__body">
 							<?php wp_nav_menu( [
-										'theme_location'  => '',
+										'theme_location'  => 'top',
 										'menu'            => '',
 										'container'       => '',
 										'container_class' => '',
@@ -127,9 +127,11 @@
 								</div>
 							</form>
 						</div>
-						<a href="#" class="actions-header__cart">
-							<span class="cart-count">1</span>
-						</a>
+						<?php
+					    global $woocommerce; ?>
+					    <a href="<?php echo $woocommerce->cart->get_cart_url() ?>" class="basket-btn actions-header__cart">
+					        <span class="basket-btn__counter cart-count">(<?php echo sprintf($woocommerce->cart->cart_contents_count); ?>)</span>
+					    </a>
 					</div>
 				</div>
 			</div>
