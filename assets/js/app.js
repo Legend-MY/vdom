@@ -37,26 +37,40 @@ window.onload = function () {
       } else if (!target.closest('.search-header__form') || target.classList.contains('search-header__close')) {
          document.querySelector('.search-header__form').classList.remove('_active');
       }
+ }
 
+
+ (function() {
       // quantity
-      const quantityButtonMinus = document.querySelector('.quantity__button_minus');
-      const quantityButtonPlus = document.querySelector('.quantity__button_plus');
+      const quantityBox = document.querySelector('#quantity_box');
+      if (quantityBox !== null) {
+         const quantityButtonMinus = quantityBox.querySelector('.quantity__button_minus');
+         const quantityButtonPlus = quantityBox.querySelector('.quantity__button_plus');
+         const quantityBoxInput = quantityBox.querySelector('input');
 
-      if (quantityButtonMinus || quantityButtonPlus) {
-         let value = parseInt(quantityButtonMinus.closest('.quantity').querySelector('input').value);
-         if (target.classList.contains('quantity__button_minus')) {
-            value = value - 1;
-            if (value < 1) {
-               value = 1
-            }
-            quantityButtonMinus.closest('.quantity').querySelector('input').value = value;
+         if (quantityButtonMinus !== null) {
+            quantityButtonMinus.addEventListener('click',function() {
+               let value = parseInt(quantityBoxInput.value);
+               value = value - 1;
+               if (value < 1) {
+                  value = 1
+               }
+               quantityBoxInput.value = value;
+            })
          }
-         if (target.classList.contains('quantity__button_plus')) {
-            value++;
-            quantityButtonPlus.closest('.quantity').querySelector('input').value = value;
+         if (quantityButtonPlus !== null) {
+            quantityButtonPlus.addEventListener('click',function() {
+               let value = parseInt(quantityBoxInput.value);
+               value++;
+               quantityBoxInput.value = value;
+            })
          }
       }
+      
+      return false;
+ })();
 
-   }
+
+  
 
 }
