@@ -23,7 +23,7 @@ get_header(); ?>
 			</div>
 
 			<div class="about__section" id="about__section">
-                <div class="about__container">
+                <div class="about__container _container">
                     <h2 class="about__title"><?php pll_e('about_title'); ?></h2>
                     <div class="about__description"><?php pll_e('about_text'); ?></div>
                     <div class="about__advantages">
@@ -121,11 +121,11 @@ get_header(); ?>
 
             </div><!-- catalog section -->
             <div class="vendor__section">
-                <div class="vendor__container">
+                <div class="vendor__container _container">
                     <div class="vendor__slider" id="vendor_slider">
                         <?php
                             // указываем категорию 30 и выключаем разбиение на страницы (пагинацию)
-                            $query = new WP_Query( 'cat=30&nopaging=1' ); 
+                            $query = new WP_Query( 'cat=32&nopaging=1' ); 
                             if( $query->have_posts() ){
                                 while( $query->have_posts() ){
                                     $query->the_post();

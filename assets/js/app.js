@@ -45,7 +45,7 @@ window.onload = function() {
         const quantityBox = document.querySelectorAll('.quantity_box');
 
         if (quantityBox.length > 0) {
-            quantityBox.forEach((quantity)=>{
+            quantityBox.forEach((quantity) => {
                 const quantityButtonMinus = quantity.querySelector('.quantity__button_minus');
                 const quantityButtonPlus = quantity.querySelector('.quantity__button_plus');
                 const quantityBoxInput = quantity.querySelector('input');
@@ -65,7 +65,7 @@ window.onload = function() {
                         value++;
                         quantityBoxInput.value = value;
                     })
-                }                
+                }
             });
         }
 
@@ -80,6 +80,17 @@ window.onload = function() {
         slidesToScroll: 1,
         arrows: false,
         dots: true,
+    });
+
+    // Подключение slick для vendor section
+    jQuery('.vendor__slider').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        variableWidth: true
     });
 
 }
