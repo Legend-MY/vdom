@@ -21,8 +21,130 @@ get_header(); ?>
                           <?php echo do_shortcode('[products category="акция" products limit="15"]'); ?>
                 </div>
 			</div>
-			
 
+			<div class="about__section" id="about__section">
+                <div class="about__container">
+                    <h2 class="about__title"><?php pll_e('about_title'); ?></h2>
+                    <div class="about__description"><?php pll_e('about_text'); ?></div>
+                    <div class="about__advantages">
+                        <div class="about__advantages_box">
+                            <div class="about__advantages_img"><img src="<?php the_field('иконка_первого_блока');?>" alt=""></div>
+                            <div class="about__advantages_text"><?php pll_e('about_text_1'); ?></div>
+                        </div>
+                        <div class="about__advantages_box">
+                            <div class="about__advantages_img"><img src="<?php the_field('иконка_второго_блока'); ?>" alt=""></div>
+                            <div class="about__advantages_text"><?php pll_e('about_text_2'); ?></div>
+                        </div>
+                        <div class="about__advantages_box">
+                            <div class="about__advantages_img"><img src="<?php the_field('иконка_третьего_блока'); ?>" alt=""></div>
+                            <div class="about__advantages_text"><?php pll_e('about_text_3'); ?></div>
+                        </div>
+                    </div>                   
+                </div>
+
+            </div><!-- #about__section -->
+            <div class="catalog__section" id="catalog__section">
+                <div class="catalog__container">
+                    <div class="catalog__line">
+                        <a href="#" class="catalog__link" id="catalog__link"><?php pll_e('catalog_link'); ?></a>
+                    </div>
+                    <div class="catalog__box">
+                        <div class="catalog__menu"></div>
+                        <div class="catalog__menu_category">
+
+                            <div class="catalog__menu_item">
+                                <div class="catalog__menu_background">
+                                    <img src="<?php the_field('фон_пункта_меню_1'); ?>" alt="<?php pll_e('catalog_1'); ?>">
+                                </div>
+                                <a href="<?php the_field('ссылка_каталога_1');?>" class="catalog__menu_title"><?php pll_e('catalog_1'); ?></a>
+                            </div>
+
+                            <div class="catalog__menu_item">
+                                <div class="catalog__menu_background">
+                                    <img src="<?php the_field('фон_пункта_меню_2'); ?>" alt="<?php pll_e('catalog_2'); ?>">
+                                </div>
+                                <a href="<?php the_field('ссылка_каталога_2');?>" class="catalog__menu_title"><?php pll_e('catalog_2'); ?></a>
+                            </div>
+
+                            <div class="catalog__menu_item">
+                                <div class="catalog__menu_background">
+                                    <img src="<?php the_field('фон_пункта_меню_3'); ?>" alt="<?php pll_e('catalog_3'); ?>">
+                                </div>
+                                <a href="<?php the_field('ссылка_каталога_3');?>" class="catalog__menu_title"><?php pll_e('catalog_3'); ?></a>
+                            </div>
+
+                            <div class="catalog__menu_item">
+                                <div class="catalog__menu_background">
+                                    <img src="<?php the_field('фон_пункта_меню_4'); ?>" alt="<?php pll_e('catalog_4'); ?>">
+                                </div>
+                                <a href="<?php the_field('ссылка_каталога_4');?>" class="catalog__menu_title"><?php pll_e('catalog_4'); ?></a>
+                            </div>
+
+                            <div class="catalog__menu_item">
+                                <div class="catalog__menu_background">
+                                    <img src="<?php the_field('фон_пункта_меню_5'); ?>" alt="<?php pll_e('catalog_5'); ?>">
+                                </div>
+                                <a href="<?php the_field('ссылка_каталога_5');?>" class="catalog__menu_title"><?php pll_e('catalog_5'); ?></a>
+                            </div>
+
+                            <div class="catalog__menu_item">
+                                <div class="catalog__menu_background">
+                                    <img src="<?php the_field('фон_пункта_меню_6'); ?>" alt="<?php pll_e('catalog_6'); ?>">
+                                </div>
+                                <a href="<?php the_field('ссылка_каталога_6');?>" class="catalog__menu_title"><?php pll_e('catalog_6'); ?></a>
+                            </div>
+
+                            <div class="catalog__menu_item">
+                                <div class="catalog__menu_background">
+                                    <img src="<?php the_field('фон_пункта_меню_7'); ?>" alt="<?php pll_e('catalog_7'); ?>">
+                                </div>
+                                <a href="<?php the_field('ссылка_каталога_7');?>" class="catalog__menu_title"><?php pll_e('catalog_7'); ?></a>
+                            </div>
+
+                            <div class="catalog__menu_item">
+                                <div class="catalog__menu_background">
+                                    <img src="<?php the_field('фон_пункта_меню_8'); ?>" alt="<?php pll_e('catalog_8'); ?>">
+                                </div>
+                                <a href="<?php the_field('ссылка_каталога_8');?>" class="catalog__menu_title"><?php pll_e('catalog_8'); ?></a>
+                            </div>
+
+                            <div class="catalog__menu_item">
+                                <div class="catalog__menu_background">
+                                    <img src="<?php the_field('фон_пункта_меню_9'); ?>" alt="<?php pll_e('catalog_9'); ?>">
+                                </div>
+                                <a href="<?php the_field('ссылка_каталога_9');?>" class="catalog__menu_title"><?php pll_e('catalog_9'); ?></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- catalog section -->
+            <div class="vendor__section">
+                <div class="vendor__container">
+                    <div class="vendor__slider" id="vendor_slider">
+                        <?php
+                            // указываем категорию 30 и выключаем разбиение на страницы (пагинацию)
+                            $query = new WP_Query( 'cat=30&nopaging=1' ); 
+                            if( $query->have_posts() ){
+                                while( $query->have_posts() ){
+                                    $query->the_post();
+                                    ?>
+                                    <div class="vendor__slide">
+                                        <div class="vendor__img">
+                                            <?php the_post_thumbnail(); ?>
+                                        </div>
+                                    </div> 
+                                   
+                                    <?php
+                                }
+                                wp_reset_postdata(); // сбрасываем переменную $post
+                            } 
+                            
+                            ?>
+                    </div>
+                </div>
+            </div>          
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php

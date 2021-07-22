@@ -42,29 +42,31 @@ window.onload = function() {
 
     (function() {
         // quantity
-        const quantityBox = document.querySelector('#quantity_box');
-        if (quantityBox !== null) {
-            const quantityButtonMinus = quantityBox.querySelector('.quantity__button_minus');
-            const quantityButtonPlus = quantityBox.querySelector('.quantity__button_plus');
-            const quantityBoxInput = quantityBox.querySelector('input');
+        const quantityBox = document.querySelectorAll('.quantity_box');
 
-            if (quantityButtonMinus !== null) {
-                quantityButtonMinus.addEventListener('click', function() {
-                    let value = parseInt(quantityBoxInput.value);
-                    value = value - 1;
-                    if (value < 1) {
-                        value = 1
-                    }
-                    quantityBoxInput.value = value;
-                })
-            }
-            if (quantityButtonPlus !== null) {
-                quantityButtonPlus.addEventListener('click', function() {
-                    let value = parseInt(quantityBoxInput.value);
-                    value++;
-                    quantityBoxInput.value = value;
-                })
-            }
+        if (quantityBox.length > 0) {
+            quantityBox.forEach((quantity)=>{
+                const quantityButtonMinus = quantity.querySelector('.quantity__button_minus');
+                const quantityButtonPlus = quantity.querySelector('.quantity__button_plus');
+                const quantityBoxInput = quantity.querySelector('input');
+                if (quantityButtonMinus !== null) {
+                    quantityButtonMinus.addEventListener('click', function() {
+                        let value = parseInt(quantityBoxInput.value);
+                        value = value - 1;
+                        if (value < 1) {
+                            value = 1
+                        }
+                        quantityBoxInput.value = value;
+                    })
+                }
+                if (quantityButtonPlus !== null) {
+                    quantityButtonPlus.addEventListener('click', function() {
+                        let value = parseInt(quantityBoxInput.value);
+                        value++;
+                        quantityBoxInput.value = value;
+                    })
+                }                
+            });
         }
 
         return false;

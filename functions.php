@@ -48,6 +48,22 @@ register_sidebar(array(
 // <?php dynamic_sidebar("Область фильтров"); ? >   // этот кусок кода нужно будет добавить в темплейт 
 
 
+pll_register_string('Заголовок о нас на главной странице' ,'about_title');
+pll_register_string('Текст о нас на главной странице','about_text');
+pll_register_string('Текст преимуществ первого блока на главной странице','about_text_1');
+pll_register_string('Текст преимуществ второго блока на главной странице','about_text_2');
+pll_register_string('Текст преимуществ третьего блока на главной странице','about_text_3');
+pll_register_string('Текст ссылки каталога на главной странице','catalog_link');
+
+pll_register_string('Заголовок первого пункта меню каталога' ,'catalog_1');
+pll_register_string('Заголовок второго пункта меню каталога' ,'catalog_2');
+pll_register_string('Заголовок третьего пункта меню каталога' ,'catalog_3');
+pll_register_string('Заголовок четвертого пункта меню каталога' ,'catalog_4');
+pll_register_string('Заголовок пятого пункта меню каталога' ,'catalog_5');
+pll_register_string('Заголовок шестого пункта меню каталога' ,'catalog_6');
+pll_register_string('Заголовок седьмого пункта меню каталога' ,'catalog_7');
+pll_register_string('Заголовок восьмого пункта меню каталога' ,'catalog_8');
+pll_register_string('Заголовок девятого пункта меню каталога' ,'catalog_9');
 
 
 
