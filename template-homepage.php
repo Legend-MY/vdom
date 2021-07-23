@@ -49,7 +49,27 @@ get_header(); ?>
                         <a href="#" class="catalog__link" id="catalog__link"><?php pll_e('catalog_link'); ?></a>
                     </div>
                     <div class="catalog__box">
-                        <div class="catalog__menu"></div>
+                        <div class="catalog__menu">
+                            <?php wp_nav_menu( [
+                                        'theme_location'  => 'left_aside',
+                                        'menu'            => '',
+                                        'container'       => '',
+                                        'container_class' => '',
+                                        'container_id'    => '',
+                                        'menu_class'      => 'menu menu_category_home',
+                                        'menu_id'         => 'menu_category_home',
+                                        'echo'            => true,
+                                        'fallback_cb'     => 'wp_page_menu',
+                                        'before'          => '',
+                                        'after'           => '',
+                                        'link_before'     => '',
+                                        'link_after'      => '',
+                                        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                        'depth'           => 0,
+                                        'walker'          => '',
+                                    ] );
+                            ?>
+                        </div>
                         <div class="catalog__menu_category">
 
                             <div class="catalog__menu_item">
@@ -125,7 +145,7 @@ get_header(); ?>
                     <div class="vendor__slider" id="vendor_slider">
                         <?php
                             // указываем категорию 30 и выключаем разбиение на страницы (пагинацию)
-                            $query = new WP_Query( 'cat=32&nopaging=1' ); 
+                            $query = new WP_Query( 'cat=30&nopaging=1' ); 
                             if( $query->have_posts() ){
                                 while( $query->have_posts() ){
                                     $query->the_post();

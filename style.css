@@ -1759,7 +1759,18 @@ body._lock {
     height: 15px;
   }
 }
-
+.menu_category_home .sub-menu {
+  display: none; 
+}
+.menu_category_home .sub-menu.active {
+  display: block; 
+}
+.storefront-sorting {
+  display: none;
+}
+.shop__filter_box {
+  display: flex;
+}
 @media (max-width: 767.98px) and (any-hover: hover) {
   .mobile-menu__btn:hover {
     background-color: #fff;

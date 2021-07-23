@@ -77,7 +77,7 @@
 								</ul>
 							</div>
 							<?php wp_nav_menu( [
-										'theme_location'  => '',
+										'theme_location'  => 'top',
 										'menu'            => '',
 										'container'       => '',
 										'container_class' => '',

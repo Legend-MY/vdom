@@ -72,10 +72,25 @@ window.onload = function() {
         return false;
     })();
 
+    (function(){
+        const categoryMenu = document.querySelector('#menu_category_home');
+
+       if (categoryMenu !== null) {
+           categoryMenu.querySelectorAll('.menu-item-has-children>a').forEach((item)=>{
+                item.addEventListener('click',function (e) {
+                    e.preventDefault();
+                    this.nextElementSibling.classList.toggle('active');
+
+                })
+           })        
+       }
+       return false;
+
+    })()
 
 
     // Подключение slick для hero section
-    jQuery('.products.columns-3').slick({
+    jQuery('#offer_slider .products.columns-3').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
