@@ -145,7 +145,7 @@ get_header(); ?>
                     <div class="vendor__slider" id="vendor_slider">
                         <?php
                             // указываем категорию 30 и выключаем разбиение на страницы (пагинацию)
-                            $query = new WP_Query( 'cat=30&nopaging=1' ); 
+                            $query = new WP_Query( 'cat=32&nopaging=1' ); 
                             if( $query->have_posts() ){
                                 while( $query->have_posts() ){
                                     $query->the_post();
