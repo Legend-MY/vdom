@@ -44,7 +44,7 @@ get_header(); ?>
 
             </div><!-- #about__section -->
             <div class="catalog__section" id="catalog__section">
-                <div class="catalog__container">
+                <div class="catalog__container _container">
                     <div class="catalog__line">
                         <a href="#" class="catalog__link" id="catalog__link"><?php pll_e('catalog_link'); ?></a>
                     </div>

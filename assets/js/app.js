@@ -72,21 +72,46 @@ window.onload = function() {
         return false;
     })();
 
-    (function(){
+    (function() {
         const categoryMenu = document.querySelector('#menu_category_home');
 
-       if (categoryMenu !== null) {
-           categoryMenu.querySelectorAll('.menu-item-has-children>a').forEach((item)=>{
-                item.addEventListener('click',function (e) {
+        if (categoryMenu !== null) {
+            categoryMenu.querySelectorAll('.menu-item-has-children>a').forEach((item) => {
+                item.addEventListener('click', function(e) {
                     e.preventDefault();
+                    item.classList.toggle('active');
                     this.nextElementSibling.classList.toggle('active');
 
                 })
-           })        
-       }
-       return false;
+            })
+        }
+        return false;
 
-    })()
+    })();
+
+    (function() {
+        const catalogLink = document.querySelector('.catalog__link'),
+            catalogMenu = document.querySelector('.catalog__menu');
+
+        if (catalogLink !== null) {
+            catalogLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                catalogMenu.classList.toggle('active');
+            });
+        }
+    })();
+
+    (function() {
+        const shopFilterLink = document.querySelector('.shop__filter_link'),
+            shopSortAside = document.querySelector('.shop__sort_aside');
+
+        if (shopFilterLink !== null) {
+            shopFilterLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                shopSortAside.classList.toggle('active');
+            });
+        }
+    })();
 
 
     // Подключение slick для hero section
