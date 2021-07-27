@@ -1645,12 +1645,6 @@ body._lock {
             flex: 0 0 320px;
   }
 
-  .catalog__menu_item {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 50%;
-            flex: 0 1 50%;
-  }
-
   .shop__sort_aside {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 320px;
@@ -2389,13 +2383,6 @@ body._lock {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
-  }
-
-  .catalog__menu_item {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 100%;
-            flex: 1 1 100%;
-    margin: 0px 0px 20px 0px;
   }
 }
 
