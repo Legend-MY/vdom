@@ -22,7 +22,7 @@ get_header(); ?>
                     
                         <?php
                             // указываем категорию 30 и выключаем разбиение на страницы (пагинацию)
-                            $query = new WP_Query( 'cat=41&nopaging=1' ); 
+                            $query = new WP_Query( 'cat=34&nopaging=1' ); 
                             if( $query->have_posts() ){
                                 while( $query->have_posts() ){
                                     $query->the_post();
@@ -31,7 +31,7 @@ get_header(); ?>
                                         <div class="testimonial__img">
                                             <?php the_post_thumbnail(); ?>
                                         </div>
-                                        <div class="testimonial__box">
+                                        <div class="testimonial__box _container">
                                             <div class="testimonial__title"><?php the_title(); ?></div>
                                             <div class="testimonial__wrapper">
                                                 <div class="testimonial__questions">
