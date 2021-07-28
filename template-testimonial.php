@@ -66,6 +66,31 @@ get_header(); ?>
                             
                             ?>
                 </div>
+            <div class="vendor__section">
+                <div class="vendor__container _container">
+                    <div class="vendor__slider" id="vendor_slider">
+                        <?php
+                            // указываем категорию 30 и выключаем разбиение на страницы (пагинацию)
+                            $query = new WP_Query( 'cat=32&nopaging=1' ); 
+                            if( $query->have_posts() ){
+                                while( $query->have_posts() ){
+                                    $query->the_post();
+                                    ?>
+                                    <div class="vendor__slide">
+                                        <div class="vendor__img">
+                                            <?php the_post_thumbnail(); ?>
+                                        </div>
+                                    </div> 
+                                   
+                                    <?php
+                                }
+                                wp_reset_postdata(); // сбрасываем переменную $post
+                            } 
+                            
+                            ?>
+                    </div>
+                </div>
+            </div>                
             </div>          
 		</main><!-- #main -->
 	</div><!-- #primary -->
