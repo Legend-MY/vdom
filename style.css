@@ -1869,6 +1869,11 @@ h1.page-title {
   background: url("assets/img/testimonial-quote.svg") center bottom/50px 50px no-repeat;
 }
 
+.testimonial .vendor__section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
 @media (min-width: 767.98px) {
   .info-footer__row {
     display: -ms-grid;
@@ -2068,6 +2073,14 @@ h1.page-title {
 
   .testimonial__user_comment {
     font-size: calc(16px + 9 * ((100vw - 320px) / 1050));
+  }
+
+  .testimonial .vendor__section {
+    padding-top: calc(50px + 50 * ((100vw - 320px) / 1050));
+  }
+
+  .testimonial .vendor__section {
+    padding-bottom: calc(50px + 50 * ((100vw - 320px) / 1050));
   }
 }
 
