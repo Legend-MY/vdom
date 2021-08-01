@@ -1901,6 +1901,64 @@ h1.page-title {
   background: url("assets/img/testimonial-quote.svg") center bottom/50px 50px no-repeat;
 }
 
+/*Доставка и оплата*/
+
+.price__item:not(:last-child) {
+  margin-bottom: 100px;
+}
+
+.price__item_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.price__item_icon {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 80px;
+          flex: 0 0 80px;
+  margin: 0px 30px 0px 0px;
+}
+
+.price__item_content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  font-family: "Open Sans", sans-serif;
+}
+
+.price__item_content ol {
+  font-size: 16px;
+  line-height: 187.5%;
+  margin: 0px 0px 0px 0px;
+}
+
+.price__item_content ol li {
+  font-weight: 400;
+  color: #656263;
+}
+
+.price__item_content ol ol {
+  list-style-type: none;
+}
+
+.price__item_content > ol > li {
+  font-weight: 700;
+  color: #0e3c23;
+}
+
+.price__item_content > ol > li:not(.price__item_content > ol > li:last-child) {
+  margin-bottom: 50px;
+}
+
+.price__title {
+  font-size: 40px;
+  line-height: 150%;
+  font-weight: 700;
+  color: #0e3c23;
+  margin: 0px 0px 25px 0px;
+}
+
 @media (min-width: 767.98px) {
   .info-footer__row {
     display: -ms-grid;
@@ -2108,6 +2166,22 @@ h1.page-title {
 
   .testimonial__user_comment {
     font-size: calc(16px + 9 * ((100vw - 320px) / 1050));
+  }
+
+  .price__item:not(:last-child) {
+    margin-bottom: calc(30px + 70 * ((100vw - 320px) / 1050));
+  }
+
+  .price__item_content ol {
+    font-size: calc(14px + 2 * ((100vw - 320px) / 1050));
+  }
+
+  .price__item_content > ol > li:not(.price__item_content > ol > li:last-child) {
+    margin-bottom: calc(20px + 30 * ((100vw - 320px) / 1050));
+  }
+
+  .price__title {
+    font-size: calc(20px + 20 * ((100vw - 320px) / 1050));
   }
 }
 
@@ -2810,6 +2884,33 @@ h1.page-title {
   .search-result {
     -ms-grid-columns: (minmax(200px, 1fr))[1];
     grid-template-columns: repeat(1, minmax(200px, 1fr));
+  }
+
+  .price__item_box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .price__item_icon {
+    margin: 0px 0px 20px 0px;
+  }
+
+  .price__item_content ol li {
+    text-align: left;
+  }
+
+  .price__item_content > ol {
+    list-style-type: none;
+  }
+
+  .price__item_content > ol > li {
+    font-size: 18px;
+    text-align: center;
   }
 }
 

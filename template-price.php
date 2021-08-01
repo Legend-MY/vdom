@@ -14,12 +14,24 @@
 
 get_header(); ?>
 
+    <?php
+        /**
+         * woocommerce_before_main_content hook.
+         *
+         * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+         * @hooked woocommerce_breadcrumb - 20
+         */
+        do_action( 'woocommerce_before_main_content' );
+        woocommerce_breadcrumb( $args );
+
+    ?>
+
 	<div id="primary" class="">
 		<main id="main" class="site-main" role="main">
-            <div class="price__container">
+            <div class="price__container _container">
                 <?php
                     // указываем категорию 42 и выключаем разбиение на страницы (пагинацию)
-                    $query = new WP_Query( 'cat=42&nopaging=1' ); 
+                    $query = new WP_Query( 'cat=44&nopaging=1' ); 
                     if( $query->have_posts() ){
                         while( $query->have_posts() ){
                             $query->the_post();
