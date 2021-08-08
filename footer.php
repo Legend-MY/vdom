@@ -19,7 +19,7 @@
 				<div class="footer__info info-footer">
 					<div class="info-footer__row">
 
-						<a href="/" class="info-footer__logo">
+						<a href="<?php echo home_url(); ?>" class="info-footer__logo">
 						<?php 
 							$logo_img = '';
 								if( $custom_logo_id = get_theme_mod('custom_logo') ){
@@ -34,16 +34,16 @@
 
 						<ul class="info-footer__list">
 							<li class="info-footer__location">
-								<a href="#">г. Чернигов, ул. Любечская, 155</a>
+								<?php pll_e('footer_address'); ?>
 							</li>
 							<li class="info-footer__phone">
-								<a href="tel:+380962525511">(096) 252-55-11</a>
+								<?php pll_e('footer_phone_1'); ?>
 							</li>
 							<li class="info-footer__phone">
-								<a href="tel:+380636125489">(063) 612-54-89</a>
+								<?php pll_e('footer_phone_2'); ?>
 							</li>
 							<li class="info-footer__mail">
-								<a href="mailto:vdom2017@gmail.com ">vdom2017@gmail.com </a>
+								<?php pll_e('footer_mail'); ?>
 							</li>
 						</ul>
 
@@ -54,12 +54,12 @@
 				<div class="footer__social social-footer">
 					<ul class="social-footer__list">
 						<li>
-							<a href="#">
+							<a href="<?php pll_e('footer_facebook'); ?>">
 								<picture><source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/img/icons/facebook.svg" type="image/webp"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/icons/facebook.svg" alt=""></picture>
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="<?php pll_e('footer_instagram'); ?>">
 								<picture><source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/img/icons/instagram.svg" type="image/webp"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/icons/instagram.svg" alt=""></picture>
 							</a>
 						</li>
@@ -71,7 +71,7 @@
 	</div>
 
 	<div class="footer__copy">
-		<p>Лучший магазин (с) 2017 Все права защищены. Интернет-магазин строительных материалов</p>
+		<p><?php pll_e('footer_copyright'); ?></p>
 	</div>
 </footer>
 

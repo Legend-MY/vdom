@@ -15,20 +15,18 @@
 			<div class="header__top top-header">
 				<div class="top-header__container _container">
 					<div class="top-header__row" data-da=".menu__body, 767, 1">
-						<a href="https://www.google.com/maps/place/Любечская ул., 155, Чернигов, Черниговская область, 14000/@51.5123313,31.2523885,17z/data=!3m1!4b1!4m5!3m4!1s0x46d5462e02485e0b:0x6dbb936fd3eb8000!8m2!3d51.512328!4d31.2545773" class="top-header__address" target="_blank">
-							г. Чернигов, ул. Любечская, 155
-						</a>
-						<div class="top-header__worktime">пн-пт с 9:00 до 18:00, сб-вс с 9:00 до 16:00</div>
+						<?php pll_e('header_address'); ?>
+						<?php pll_e('header_worktime'); ?>
 						<div class="top-header__phones phones-header">
-							<a href="tel:+380962525511" class="phones-header__phone">(096) 252-55-11</a>
-							<a href="tel:+380636125489" class="phones-header__phone">(063) 612-54-89</a>
+							<?php pll_e('header_phone_1'); ?>
+							<?php pll_e('header_phone_2'); ?>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="header__container _container">
 				<div class="header__wrapper">
-					<a href="/" class="header__logo">
+					<a href="<?php echo home_url(); ?>" class="header__logo">
 						<?php 
 							$logo_img = '';
 								if( $custom_logo_id = get_theme_mod('custom_logo') ){
@@ -130,7 +128,7 @@
 						<?php
 					    global $woocommerce; ?>
 					    <a href="<?php echo $woocommerce->cart->get_cart_url() ?>" class="basket-btn actions-header__cart">
-					        <span class="basket-btn__counter cart-count">(<?php echo sprintf($woocommerce->cart->cart_contents_count); ?>)</span>
+					        <span id="mini-cart-count" class="basket-btn__counter cart-count">(<?php echo sprintf($woocommerce->cart->cart_contents_count); ?>)</span>
 					    </a>
 					</div>
 				</div>

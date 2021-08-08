@@ -999,6 +999,21 @@ body._lock {
   background-color: #0f834d;
 }
 
+.content-area .cart-empty.woocommerce-info {
+  background-color: #0a6b38;
+}
+
+.content-area .button.wc-backward {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  background-color: #0a6b38;
+  border-radius: 5px;
+  -webkit-transition: background-color 0.3s ease 0s;
+  -o-transition: background-color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s;
+}
+
 .storefront-sticky-add-to-cart .storefront-sticky-add-to-cart__content-button {
   font-size: 16px;
   line-height: 22px;
@@ -1718,6 +1733,16 @@ body._lock {
 
 .checkout.woocommerce-checkout .woocommerce-privacy-policy-text {
   font-size: 12px;
+  line-height: 1.4;
+}
+
+.checkout.woocommerce-checkout #payment .payment_methods > .woocommerce-PaymentMethod > label,
+.checkout.woocommerce-checkout #payment .payment_methods > .wc_payment_method > label {
+  display: none;
+}
+
+.checkout.woocommerce-checkout #payment .payment_methods li p {
+  font-size: 14px;
   line-height: 1.4;
 }
 
@@ -2983,6 +3008,10 @@ h1.page-title {
   .content-area ul.products li.product .button:hover,
   .content-area ul.products li.product .added_to_cart.wc-forward:hover {
     background: #229c5c;
+  }
+
+  .content-area .button.wc-backward:hover {
+    background-color: #229c5c;
   }
 
   .storefront-sticky-add-to-cart .storefront-sticky-add-to-cart__content-button:hover {

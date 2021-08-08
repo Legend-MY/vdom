@@ -2,12 +2,12 @@
 
 function testWebP(callback) {
     var webP = new Image();
-    webP.onload = webP.onerror = function() {
+    webP.onload = webP.onerror = function () {
         callback(webP.height == 2);
     };
     webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
 }
-testWebP(function(support) {
+testWebP(function (support) {
     if (support === true) {
         document.querySelector('html').classList.add('_webp');
     } else {
@@ -15,7 +15,7 @@ testWebP(function(support) {
     }
 });
 
-window.onload = function() {
+window.onload = function () {
 
     document.addEventListener('click', documentActions);
 
@@ -40,9 +40,10 @@ window.onload = function() {
     }
 
 
-    (function() {
+    (function () {
         // quantity
         const quantityBox = document.querySelectorAll('.quantity_box');
+        const updateCart = document.querySelector('[name=update_cart]');
 
         if (quantityBox.length > 0) {
             quantityBox.forEach((quantity) => {
@@ -50,20 +51,22 @@ window.onload = function() {
                 const quantityButtonPlus = quantity.querySelector('.quantity__button_plus');
                 const quantityBoxInput = quantity.querySelector('input');
                 if (quantityButtonMinus !== null) {
-                    quantityButtonMinus.addEventListener('click', function() {
+                    quantityButtonMinus.addEventListener('click', function () {
                         let value = parseInt(quantityBoxInput.value);
                         value = value - 1;
                         if (value < 1) {
                             value = 1
                         }
                         quantityBoxInput.value = value;
+                        updateCart !== null ? updateCart.removeAttribute('disabled') : null
                     })
                 }
                 if (quantityButtonPlus !== null) {
-                    quantityButtonPlus.addEventListener('click', function() {
+                    quantityButtonPlus.addEventListener('click', function () {
                         let value = parseInt(quantityBoxInput.value);
                         value++;
                         quantityBoxInput.value = value;
+                        updateCart !== null ? updateCart.removeAttribute('disabled') : null
                     })
                 }
             });
@@ -72,12 +75,12 @@ window.onload = function() {
         return false;
     })();
 
-    (function() {
+    (function () {
         const categoryMenu = document.querySelector('#menu_category_home');
 
         if (categoryMenu !== null) {
             categoryMenu.querySelectorAll('.menu-item-has-children>a').forEach((item) => {
-                item.addEventListener('click', function(e) {
+                item.addEventListener('click', function (e) {
                     e.preventDefault();
                     item.classList.toggle('active');
                     this.nextElementSibling.classList.toggle('active');
@@ -89,24 +92,24 @@ window.onload = function() {
 
     })();
 
-    (function() {
+    (function () {
         const catalogLink = document.querySelector('.catalog__link'),
             catalogMenu = document.querySelector('.catalog__menu');
 
         if (catalogLink !== null) {
-            catalogLink.addEventListener('click', function(event) {
+            catalogLink.addEventListener('click', function (event) {
                 event.preventDefault();
                 catalogMenu.classList.toggle('active');
             });
         }
     })();
 
-    (function() {
+    (function () {
         const shopFilterLink = document.querySelector('.shop__filter_link'),
             shopSortAside = document.querySelector('.shop__sort_aside');
 
         if (shopFilterLink !== null) {
-            shopFilterLink.addEventListener('click', function(event) {
+            shopFilterLink.addEventListener('click', function (event) {
                 event.preventDefault();
                 shopSortAside.classList.toggle('active');
             });

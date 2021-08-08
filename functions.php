@@ -67,6 +67,47 @@ pll_register_string('Заголовок восьмого пункта меню �
 pll_register_string('Заголовок девятого пункта меню каталога' ,'catalog_9');
 pll_register_string('Текст кнопки фильтров' ,'filter_link');
 
+pll_register_string('Адрес в шапке' ,'header_address');
+pll_register_string('Время работы' ,'header_worktime');
+pll_register_string('Номер телефона 1' ,'header_phone_1');
+pll_register_string('Номер телефона 2' ,'header_phone_2');
+
+pll_register_string('Адрес в футере' ,'footer_address');
+pll_register_string('Номер телефона в футере 1' ,'footer_phone_1');
+pll_register_string('Номер телефона в футере 2' ,'footer_phone_2');
+pll_register_string('Почта в футере' ,'footer_mail');
+pll_register_string('Facebook в футере' ,'footer_facebook');
+pll_register_string('Instagram в футере' ,'footer_instagram');
+pll_register_string('copy в футере' ,'footer_copyright');
+
+pll_register_string('Слово цена в карточке товара' ,'product_price');
 
 
-?>
+
+add_filter( 'woocommerce_add_to_cart_fragments', 'wc_refresh_mini_cart_count');
+function wc_refresh_mini_cart_count($fragments){
+    ob_start();
+    ?>
+    <span id="mini-cart-count" class="basket-btn__counter cart-count">
+        <?php echo WC()->cart->get_cart_contents_count(); ?>
+    </span>
+    <?php
+        $fragments['#mini-cart-count'] = ob_get_clean();
+    return $fragments;
+}
+
+add_action( 'woocommerce_new_order', 'new_order_send_tg',  1, 1  );
+function new_order_send_tg( $order_id ) {
+    $order = new WC_Order( $order_id );
+    $name = $_POST['billing_first_name'];
+    $surname = $_POST['billing_last_name'];
+    $phone = $_POST['billing_phone'];
+   
+    $msg = '*Магазин vdom.cn.ua*'."\n";
+    $msg .= 'Новый заказ: '.$order_id."\n".'Имя: '.$name."\n".'Фамилия: '.$surname."\n".'Телефон: '.$phone;
+ 
+    $userId = '509376170'; // Ваш id в телеграм
+    $token = '1367969882:AAEgA6EuwYLhdjBz_rf2JyVdjIVen3ZEUxQ'; // Token бота
+ 
+    file_get_contents('https://api.telegram.org/bot'. $token .'/sendMessage?chat_id='. $userId .'&text=' . urlencode($msg) . '&parse_mode=markdown'); // Отправляем сообщение
+}
